@@ -1,7 +1,7 @@
 /* General Body Styling */
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 15px; /* smaller, friendly text */
+    font-size: 15px; /* base text size */
     line-height: 1.7;
     margin: 0;
     padding: 0;
@@ -76,6 +76,13 @@ h2::after {
     animation: growLine 1s ease forwards;
 }
 
+/* Paragraphs (sub-texts) */
+section p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #555;
+}
+
 /* Lists */
 ul {
     list-style-type: disc;
@@ -84,8 +91,9 @@ ul {
 }
 
 li {
-    font-size: 14px;
+    font-size: 13.5px; /* smaller sub-text */
     line-height: 1.6;
+    color: #555;
     margin-bottom: 8px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -166,8 +174,9 @@ img:hover {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-size: 14px;
+    font-size: 13px; /* smaller sub-text */
     line-height: 1.6;
+    color: #555;
     transition: transform 0.3s ease;
 }
 
@@ -215,6 +224,6 @@ img:hover {
     }
 
     .timeline-content {
-        font-size: 13px;
+        font-size: 12.5px;
     }
 }
