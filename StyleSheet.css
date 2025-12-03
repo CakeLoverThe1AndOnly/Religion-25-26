@@ -1,3 +1,113 @@
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px; /* smaller, friendly text */
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Header Styling */
+header {
+    background-color: #4b2e83;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: slideDown 1s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Section Styling */
+section {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Section Headings */
+h2 {
+    color: #4b2e83;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #4b2e83;
+    margin-top: 5px;
+    border-radius: 2px;
+    animation: growLine 1s ease forwards;
+}
+
+/* Lists */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+li {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+    color: #4b2e83;
+    transform: translateX(5px);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    margin-top: 10px;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
 /* Timeline Container */
 .timeline-container {
     margin: 60px auto;
@@ -38,7 +148,7 @@
 }
 
 .timeline-icon {
-    font-size: 30px;
+    font-size: 24px;
     background-color: #4b2e83;
     color: #fff;
     border-radius: 50%;
@@ -56,105 +166,13 @@
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 14px;
+    line-height: 1.6;
     transition: transform 0.3s ease;
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
-}
-
-
-/* Header Styling */
-header {
-    background-color: #4b2e83;
-    color: #fff;
-    text-align: center;
-    padding: 30px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    animation: slideDown 1s ease-out;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    transition: transform 0.3s ease;
-}
-
-header h1:hover {
-    transform: scale(1.05);
-}
-
-/* Main Content */
-main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-/* Section Styling */
-section {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeUp 1s ease forwards;
-    opacity: 0;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-/* Section Headings */
-h2 {
-    color: #4b2e83;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #4b2e83;
-    margin-top: 5px;
-    border-radius: 2px;
-    animation: growLine 1s ease forwards;
-}
-
-/* Lists */
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-li {
-    margin-bottom: 8px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-li:hover {
-    color: #4b2e83;
-    transform: translateX(5px);
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    border-radius: 12px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    margin-top: 10px;
-}
-
-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* Animations */
@@ -180,13 +198,23 @@ img:hover {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    main {
-        padding: 0 10px;
+    body {
+        font-size: 14px;
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    li {
+        font-size: 13px;
+    }
+
+    .timeline-content {
+        font-size: 13px;
     }
 }
-
-
