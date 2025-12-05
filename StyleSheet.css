@@ -1,28 +1,48 @@
-/* General Body Styling */
+/* ================================
+   GLOBAL SETTINGS + VARIABLES
+   ================================ */
+:root {
+    --primary: #4b2e83;
+    --primary-light: #6a40b6;
+    --background: #f4f4f9;
+    --background-light: #eaeaf3;
+    --text: #333;
+    --text-light: #555;
+    --shadow: rgba(0,0,0,0.1);
+    --shadow-strong: rgba(0,0,0,0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Background gradient for premium feel */
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 15px; /* base text size */
+    font-size: 16px;
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background: linear-gradient(to bottom right, var(--background), var(--background-light));
+    color: var(--text);
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Header Styling */
+/* ================================
+   HEADER
+   ================================ */
 header {
-    background-color: #4b2e83;
+    background-color: var(--primary);
     color: #fff;
     text-align: center;
-    padding: 30px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 35px 0;
+    box-shadow: 0 4px 8px var(--shadow-strong);
     animation: slideDown 1s ease-out;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 600;
     letter-spacing: 1px;
     transition: transform 0.3s ease;
@@ -32,37 +52,46 @@ header h1:hover {
     transform: scale(1.05);
 }
 
-/* Main Content */
+/* ================================
+   MAIN CONTENT
+   ================================ */
 main {
     max-width: 900px;
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
-/* Section Styling */
+/* ================================
+   SECTIONS
+   ================================ */
 section {
     background-color: #fff;
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 6px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeUp 1s ease forwards;
     opacity: 0;
 }
 
 section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 6px 12px var(--shadow-strong);
 }
 
 /* Section Headings */
 h2 {
-    color: #4b2e83;
+    color: var(--primary);
     margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
     position: relative;
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: var(--primary-light);
 }
 
 h2::after {
@@ -70,17 +99,18 @@ h2::after {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #4b2e83;
+    background-color: var(--primary);
     margin-top: 5px;
     border-radius: 2px;
     animation: growLine 1s ease forwards;
 }
 
-/* Paragraphs (sub-texts) */
+/* ================================
+   TEXT
+   ================================ */
 section p {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: #555;
+    font-size: 14px;
+    color: var(--text-light);
 }
 
 /* Lists */
@@ -91,43 +121,45 @@ ul {
 }
 
 li {
-    font-size: 13.5px; /* smaller sub-text */
-    line-height: 1.6;
-    color: #555;
+    font-size: 14px;
+    color: var(--text-light);
     margin-bottom: 8px;
+    line-height: 1.6;
     transition: color 0.3s ease, transform 0.3s ease;
-    cursor: default;
 }
 
 li:hover {
-    color: #4b2e83;
-    transform: translateX(5px);
-    cursor: default;
+    color: var(--primary);
+    transform: translateX(6px);
 }
 
-/* Images */
+/* ================================
+   IMAGES
+   ================================ */
 img {
     max-width: 100%;
     border-radius: 12px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    margin-top: 10px;
+    margin: 15px auto 0;
+    display: block;
 }
 
 img:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 12px var(--shadow-strong);
 }
 
-/* Timeline Container */
+/* ================================
+   TIMELINE
+   ================================ */
 .timeline-container {
     margin: 60px auto;
     padding: 40px 20px;
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 6px var(--shadow);
 }
 
-/* Timeline Layout */
 .timeline {
     display: flex;
     justify-content: space-between;
@@ -145,21 +177,21 @@ img:hover {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: #4b2e83;
+    background-color: var(--primary);
     z-index: 0;
 }
 
-/* Timeline Items */
 .timeline-item {
     position: relative;
     width: 160px;
     text-align: center;
     z-index: 1;
+    margin: 0 10px;
 }
 
 .timeline-icon {
     font-size: 24px;
-    background-color: #4b2e83;
+    background-color: var(--primary);
     color: #fff;
     border-radius: 50%;
     width: 60px;
@@ -168,17 +200,16 @@ img:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px var(--shadow-strong);
 }
 
 .timeline-content {
-    background-color: #f4f4f9;
-    padding: 10px;
+    background-color: var(--background);
+    padding: 12px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-size: 13px; /* smaller sub-text */
-    line-height: 1.6;
-    color: #555;
+    box-shadow: 0 2px 4px var(--shadow);
+    font-size: 13px;
+    color: var(--text-light);
     transition: transform 0.3s ease;
 }
 
@@ -186,7 +217,38 @@ img:hover {
     transform: translateY(-5px);
 }
 
-/* Animations */
+/* Mobile Timeline */
+@media (max-width: 700px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary);
+    color: white;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -207,25 +269,12 @@ img:hover {
     to { width: 50px; }
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    header h1 {
-        font-size: 1.6rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    li {
-        font-size: 13px;
-    }
-
-    .timeline-content {
-        font-size: 12.5px;
+/* ================================
+   ACCESSIBILITY — reduced motion
+   ================================ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
     }
 }
